@@ -1,0 +1,52 @@
+<?php
+require_once __DIR__ . "/../models/cita.php";
+require_once __DIR__ . "/../models/citaespecialista.php";
+require_once __DIR__ . "/../models/citageneral.php";
+require_once __DIR__ . "/../view/consultausuario.php";
+require_once __DIR__ . "/../view/visualizarcita.php";
+
+
+class controladorcita
+{
+    private $vista;
+
+    /** @param visualizarcita $vista */
+    public function __construct(visualizarcita $vista)
+    {
+        $this->vista = $vista;
+    }
+
+    public function demostrar()
+    {
+          $citas = [];
+        $this->vista->mostrartitulo("citas con POO (MVC)");
+        if (isset($_POST["numero"], $_POST["tipo"], $_POST["tarifa"])) {
+
+            $numeroform = $_POST["numero"];
+            $tipoform = $_POST["tipo"];
+            $tarifa = $_POST["tarifa"];
+
+
+          
+
+
+
+            if ($tipoform == 1 || $tipoform == 2 || $tipoform == 3) {
+
+               $citas[] = new citageneral($numeroform, $tipoform, $tarifa);
+            } elseif ($tipoform == 4 || $tipoform == 5) {
+                $citas[] = new citaespecialista($numeroform, $tipoform, $tarifa);
+            }
+        }
+
+        $this->vista->mostrarseparador();
+        foreach($citas as $cita){
+            $this->vista->mostrarcita($cita);
+            echo "<br>";
+        }
+
+        $this->vista->mostrarseparador();
+
+        echo "<br>";
+    }
+}
