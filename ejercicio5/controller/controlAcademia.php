@@ -13,7 +13,7 @@ class academiaControl {
             $tipos = $_POST['tipo'];
 
             for ($i = 0; $i < count($nombres); $i++) {
-                if (!empty($nombres[$i])) {
+                if (!empty($nombres[$i]) && persona::validarDocumento($documentos[$i]) && filter_var($correos[$i], FILTER_VALIDATE_EMAIL)) {
                     switch ($tipos[$i]) {
                         case "estudiante":
                             $this->personas[] = new Estudiante($nombres[$i], $documentos[$i], $correos[$i]);
@@ -33,5 +33,9 @@ class academiaControl {
     public function mostrarResultados() {
         $this->vista->mostrarPersonas($this->personas);
         $this->vista->mostrarTotal();
+    }
+
+    public function getPersonas() {
+        return $this->personas;
     }
 }

@@ -1,8 +1,9 @@
 <?php
 class AcademiaVista {
-    public function formularioPersonas($cantidad = 3) {
+    public function formularioPersonas($cantidad = 1, $personasJson = '[]') {
         echo "<h3>Registrar Personas</h3>";
         echo '<form method="post">';
+        echo '<input type="hidden" name="personasGuardadas" value="' . $personasJson . '">';
         for ($i = 0; $i < $cantidad; $i++) {
             echo "<fieldset><legend>Persona #" . ($i+1) . "</legend>";
             echo "Nombre: <input type='text' name='nombre[$i]'><br>";

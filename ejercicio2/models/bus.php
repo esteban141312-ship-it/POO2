@@ -50,10 +50,6 @@ class bus
         return $this->preciospasaje * $this->totalpasajeros;
     }
 
-
-
-
-
     #_______________________________________________#
 
     public function subirpasajeros(int $pasajeros): void
@@ -63,9 +59,6 @@ class bus
             $this->pasajeros = $this->pasajeros + $pasajeros;
             $this->totalpasajeros = $this->totalpasajeros + $pasajeros;
         }
-              
-        
-      
     }
     public function errorcapacidad(){
           return "la cantidad de pasajeros que subio es superior a la capacidad del vehiculo";
@@ -74,9 +67,6 @@ class bus
     public function errorpasajeros0(){
         return "ya no se pueden bajar mas pasajeros";
     }
-
-   
-
     public function bajarpasajeros(int $pasajeros): void
     {
         if ( $pasajeros <= $this->pasajeros ) {
@@ -85,8 +75,6 @@ class bus
         } else {echo "no se pueden bajar mas pasajeros";}
         
     }
-
-
     #____________________________________________#
 
     public function mostrar()

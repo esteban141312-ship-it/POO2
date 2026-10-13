@@ -24,7 +24,7 @@ class Catalogo {
     }
 
     public function mostrarRecomendadas() {
-        echo "\n Películas recomendadas (calificación ≥ 4):\n";
+        echo "\n Películas recomendadas (calificación ):\n";
         foreach ($this->peliculas as $p) {
             if ($p->getCalificacionUsuarios() >= 4) {
                 $p->mostrarInfo();

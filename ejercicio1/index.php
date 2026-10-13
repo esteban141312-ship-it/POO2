@@ -6,7 +6,7 @@ require_once __DIR__ . "/view/visualizarcita.php";
 
 
 
-if (!isset($_POST["numero"], $_POST["tipo"])) {
+if (!isset($_POST["numero"], $_POST["tipo"], $_POST["tarifa"])) {
 
     $formulario = new consultausuario();
     $formulario->mostrar();

@@ -1,7 +1,7 @@
 <?php
 class curso {
     private $nombre;
-    private $docente;
+    private $docente = null;
     private $estudiantes = [];
 
     public function __construct($nombre) {
@@ -19,7 +19,7 @@ class curso {
     }
 
     public function mostrarInfo() {
-        echo "📘 Curso: $this->nombre<br>";
+        echo "Curso: $this->nombre<br>";
         if ($this->docente) echo "Docente: " . $this->docente->getNombre() . "<br>";
         echo "Estudiantes inscritos: " . count($this->estudiantes) . "<br>";
     }

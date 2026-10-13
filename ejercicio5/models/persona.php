@@ -30,5 +30,17 @@ abstract class persona {
         return self::$totalPersonas;
     }
 
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function getDocumento() {
+        return $this->documento;
+    }
+
+    public function getCorreo() {
+        return $this->correo;
+    }
+
     abstract public function mostrarInfo();
 }

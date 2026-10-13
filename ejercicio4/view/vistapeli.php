@@ -1,8 +1,9 @@
 <?php
 class PeliculaVista {
-    public function formularioPeliculas($cantidad = 3) {
+    public function formularioPeliculas($cantidad = 1, $peliculasJson = '[]') {
         echo "<h3>Registrar Películas</h3>";
         echo '<form method="post">';
+        echo '<input type="hidden" name="peliculasGuardadas" value="' . $peliculasJson . '">';
         for ($i = 0; $i < $cantidad; $i++) {
             echo "<fieldset><legend>Película #" . ($i+1) . "</legend>";
             echo "Título: <input type='text' name='titulo[$i]'><br>";
@@ -19,17 +20,17 @@ class PeliculaVista {
     public function mostrarPeliculas($peliculas) {
         echo "<h3>Películas registradas</h3>";
         foreach ($peliculas as $p) {
-            echo "🎬 " . $p->getTitulo() . " | Género: " . $p->getGenero() .
+            echo "" . $p->getTitulo() . " | Género: " . $p->getGenero() .
                  " | Duración: " . $p->getDuracionMinutos() . " min | Clasificación: " .
                  $p->getClasificacion() . " | Calificación: " . $p->getCalificacionUsuarios() . "/5<br>";
         }
     }
 
     public function mostrarRecomendadas($peliculas) {
-        echo "<h3>Películas recomendadas (≥4)</h3>";
+        echo "<h3>Películas recomendadas</h3>";
         foreach ($peliculas as $p) {
             if ($p->getCalificacionUsuarios() >= 4) {
-                echo "⭐ " . $p->getTitulo() . " (" . $p->getCalificacionUsuarios() . "/5)<br>";
+                echo "". $p->getTitulo() . " (" . $p->getCalificacionUsuarios() . "/5)<br>";
             }
         }
     }

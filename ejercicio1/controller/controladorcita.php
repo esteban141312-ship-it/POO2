@@ -20,10 +20,12 @@ class controladorcita
     {
           $citas = [];
         $this->vista->mostrartitulo("citas con POO (MVC)");
-        if (isset($_POST["numero"], $_POST["tipo"])) {
+        if (isset($_POST["numero"], $_POST["tipo"], $_POST["tarifa"])) {
 
             $numeroform = $_POST["numero"];
             $tipoform = $_POST["tipo"];
+            $tarifa = $_POST["tarifa"];
+
 
           
 
@@ -31,9 +33,9 @@ class controladorcita
 
             if ($tipoform == 1 || $tipoform == 2 || $tipoform == 3) {
 
-               $citas[] = new citageneral($numeroform, $tipoform);
+               $citas[] = new citageneral($numeroform, $tipoform, $tarifa);
             } elseif ($tipoform == 4 || $tipoform == 5) {
-                $citas[] = new citaespecialista($numeroform, $tipoform);
+                $citas[] = new citaespecialista($numeroform, $tipoform, $tarifa);
             }
         }
 

@@ -25,7 +25,7 @@ class BancoController {
 
     // Agregar persona
     public function agregarPersona($cedula, $nombre, $edad) {
-        $persona = new persona($cedula, $nombre, $edad); // minúscula
+        $persona = new persona($cedula, $nombre, $edad); 
         $this->banco->addCliente($persona);
     }
 

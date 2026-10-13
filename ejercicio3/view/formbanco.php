@@ -7,10 +7,11 @@ class BancoVista {
 }
 
     // Formulario para agregar persona
-    public function formularioPersona() {
+    public function formularioPersona($clientesJson = '[]') {
         echo '
         <h3>Agregar Persona</h3>
         <form method="post">
+            <input type="hidden" name="clientesGuardados" value="' . $clientesJson . '">
             Cédula: <input type="text" name="cedula"><br>
             Nombre: <input type="text" name="nombre"><br>
             Edad: <input type="number" name="edad"><br>
@@ -19,10 +20,11 @@ class BancoVista {
     }
 
     // Formulario para agregar empresa
-    public function formularioEmpresa() {
+    public function formularioEmpresa($clientesJson = '[]') {
         echo '
         <h3>Agregar Empresa</h3>
         <form method="post">
+            <input type="hidden" name="clientesGuardados" value="' . $clientesJson . '">
             NIT: <input type="text" name="nit"><br>
             Nombre: <input type="text" name="nombre"><br>
             Representante: <input type="text" name="representante"><br>

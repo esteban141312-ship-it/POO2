@@ -5,11 +5,11 @@ class cita {
     private float $tarifa;
     private float $valorfinal;
 
-    public function __construct(int $numero, int $tipo)
+    public function __construct(int $numero, int $tipo, int $tarifa)
     {
       $this->numero = $numero;
       $this->tipo = $tipo;
-      $this->tarifa = 300000;
+      $this->tarifa = $tarifa;
      
     }
 

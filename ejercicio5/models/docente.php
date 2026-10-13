@@ -1,5 +1,5 @@
 <?php
-require_once "Persona.php";
+require_once __DIR__ . "/persona.php";
 class docente extends persona {
     private $cursosDictados = [];
 
@@ -12,6 +12,6 @@ class docente extends persona {
     }
 
     public function mostrarInfo() {
-        echo "👨‍🏫 Docente: $this->nombre | Doc: $this->documento | Correo: $this->correo<br>";
+        echo " Docente: $this->nombre | Doc: $this->documento | Correo: $this->correo<br>";
     }
 }

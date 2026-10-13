@@ -4,9 +4,9 @@ require_once __DIR__ . "/cita.php";
 class citageneral extends cita{
 
 
-	public function __construct(int $numero, int $tipo)
+	public function __construct(int $numero, int $tipo, int $tarifa)
     {
-        parent:: __construct($numero, $tipo);
+        parent:: __construct($numero, $tipo, $tarifa);
 }
 
 
