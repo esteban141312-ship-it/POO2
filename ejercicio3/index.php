@@ -7,7 +7,7 @@ require_once __DIR__ . "/view/formbanco.php";
 require_once __DIR__ . "/controller/controladorbanco.php";
 
 // Crear banco, vista y controlador
-$banco = new banco("Banco J");   // minúscula porque tu clase está definida así
+$banco = new banco("Banco J");   
 $clientesGuardados = json_decode($_POST['clientesGuardados'] ?? '[]', true);
 if (is_array($clientesGuardados)) {
     foreach ($clientesGuardados as $cliente) {
