@@ -20,17 +20,17 @@ class PeliculaVista {
     public function mostrarPeliculas($peliculas) {
         echo "<h3>Películas registradas</h3>";
         foreach ($peliculas as $p) {
-            echo "🎬 " . $p->getTitulo() . " | Género: " . $p->getGenero() .
+            echo "" . $p->getTitulo() . " | Género: " . $p->getGenero() .
                  " | Duración: " . $p->getDuracionMinutos() . " min | Clasificación: " .
                  $p->getClasificacion() . " | Calificación: " . $p->getCalificacionUsuarios() . "/5<br>";
         }
     }
 
     public function mostrarRecomendadas($peliculas) {
-        echo "<h3>Películas recomendadas (≥4)</h3>";
+        echo "<h3>Películas recomendadas</h3>";
         foreach ($peliculas as $p) {
             if ($p->getCalificacionUsuarios() >= 4) {
-                echo "⭐ " . $p->getTitulo() . " (" . $p->getCalificacionUsuarios() . "/5)<br>";
+                echo "". $p->getTitulo() . " (" . $p->getCalificacionUsuarios() . "/5)<br>";
             }
         }
     }
